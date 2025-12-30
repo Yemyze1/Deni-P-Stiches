@@ -1,18 +1,44 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Nav = () => {
-  return (
-    <nav className="bg-indigo-900 flex items-center justify-between px-25 py-4">
-      <h1 className="text-white text-2xl hover:text-indigo-600 cursor-pointer font-bold">Deni-P Stiches</h1>
-      <ul className="flex space-x-6">
-        <a href="#home"><li className="text-white hover:text-indigo-300 cursor-pointer">Home</li></a>
-        <a href="#about"><li className="text-white hover:text-indigo-300 cursor-pointer">About Us</li></a>
-        <a href="#collections"><li className="text-white hover:text-indigo-300 cursor-pointer">Collections</li></a>
-       <a href="#contact"> <li className="text-white hover:text-indigo-300 cursor-pointer">Contact Us</li></a>
-        <a href="#bottom"><li className="text-white hover:text-indigo-400 cursor-pointer">Bottom</li></a>
-      </ul>
-    </nav>
-  )
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-export default Nav
+  return (
+    <nav className="bg-indigo-900 px-6 py-4 flex items-center justify-between">
+      {/* Logo  */}
+      <h1 className="text-white text-2xl font-bold cursor-pointer">
+        Deni-P Stiches
+      </h1>
+
+      {/* Hamburger Button */}
+      <button 
+        className="text-white text-3xl md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        ☰
+      </button>
+
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex space-x-6 text-white text-lg">
+        <li className="hover:text-indigo-300 cursor-pointer"><a href="#home">Home</a></li>
+        <li className="hover:text-indigo-300 cursor-pointer"><a href="#about">About Us</a></li>
+        <li className="hover:text-indigo-300 cursor-pointer"><a href="#collections">Collections</a></li>
+        <li className="hover:text-indigo-300 cursor-pointer"><a href="#contact">Contact Us</a></li>
+        <li className="hover:text-indigo-300 cursor-pointer"><a href="#bottom">Bottom</a></li>
+      </ul>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <ul className="absolute top-16 right-6 bg-indigo-800 w-48 rounded-lg shadow-lg md:hidden text-white text-lg flex flex-col space-y-4 p-4 ">
+          <li className="hover:text-indigo-300 cursor-pointer"><a href="#home">Home</a></li>
+          <li className="hover:text-indigo-300 cursor-pointer"><a href="#about">About Us</a></li>
+          <li className="hover:text-indigo-300 cursor-pointer"><a href="#collections">Collections</a></li>
+          <li className="hover:text-indigo-300 cursor-pointer"><a href="#contact">Contact Us</a></li>
+          <li className="hover:text-indigo-300 cursor-pointer"><a href="#bottom">Bottom</a></li>
+        </ul>
+      )}
+    </nav>
+  );
+};
+
+export default Nav;

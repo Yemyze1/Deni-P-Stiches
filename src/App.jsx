@@ -1,34 +1,40 @@
-import React from 'react'
-// import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
-import Nav from './Nav'
-import Hero from './Hero'
-import Collections from './Collections'
-import About from './About'
-import Contact from './Contact'
-import Footer from './Footer'
 
+import React, { useEffect, useState } from 'react';
+import Nav from './Nav';
+import Hero from './Hero';
+import Collections from './Collections';
+import Collectionscopy from './Collectionscopy';
+import About from './About';
+import Contact from './Contact';
+import Footer from './Footer';
+import LoaderSpinner from './LoaderSpinner';
 
+const App = () => {
+  const [Loader, setLoader] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoader(false), 5000)
+    return () => clearTimeout(timer);
+  }, []);
 
-function App() {
-
+  if (Loader) {
+    return <LoaderSpinner />;
+  
+  }
   return (
-     <>
-    {/* <div>
-    <Link to="/about">About</Link>
-   <BrowserRouter>
-    <Route path="/about" element={<About/>}/>
-    </BrowserRouter>
-    </div> */}
-    
-    <Nav />
-    <Hero />
-    <Collections />
-    <About />
-    <Contact />
-    <Footer />
+    <>
+      <Nav />
+      <Hero />
+      <Collections />
+       <Collectionscopy/>
+      <About />
+      <Contact />
+      <Footer />
+       
+      
     </>
-  )
-}
 
-export default App
+  );
+};
+
+export default App;
