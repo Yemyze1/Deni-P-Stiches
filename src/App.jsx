@@ -9,6 +9,8 @@ import Contact from './Contact';
 import Footer from './Footer';
 import LoaderSpinner from './LoaderSpinner';
 
+
+
 const App = () => {
   const [Loader, setLoader] = useState(true);
 
@@ -30,7 +32,8 @@ const App = () => {
       <About />
       <Contact />
       <Footer />
-       
+     
+      
       
     </>
 

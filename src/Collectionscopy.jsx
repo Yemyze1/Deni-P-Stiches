@@ -12,6 +12,7 @@ const Collections = () => {
           <p className="text-gray-600 mb-2">Beautifully crafted for every occasion.</p>
           <button className="bg-indigo-800 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">View</button>
         </div>
+        
         <div className="bg-white rounded shadow p-6 flex flex-col items-center">
              <img src="./ankara style.jpg" alt="Ankara style" className="mb-4 rounded -3x1  object-cover transition duration-300 hover: hover:scale-75" />
             <h4 className="text-xl font-semibold mb-2">Traditional Attire</h4>
