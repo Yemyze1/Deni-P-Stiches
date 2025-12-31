@@ -2,6 +2,7 @@ import React from 'react'
 
 const Collections = () => {
   return (
+
     <section id= 'collections' className="py-16 px-6 bg-gray-50">
       <h3 className="text-3xl font-bold text-center mb-8 text-indigo-900">Our Collections</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
